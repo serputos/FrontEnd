@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <title>Proyetos Web - 01 - Introduccón Web</title>
+  <link rel="stylesheet" type="text/css" href="dist/prism.css">
+  <link rel="stylesheet" type="text/css" href="dist/styles.css">
+</head>
+
+<body>
+  <article class="markdown-body">
+    <h1>Arquitectura Web</h1>
+    <nav>
+      <ul>
+        <li><a href="#▶️">Introducción</a></li>
+        <li><a href="#🌊">Flujo de aplicaciones web</a></li>
+        <li><a href="#📛">Dominio</a></li>
+        <li><a href="#🏠">Alojamiento</a></li>
+        <li><a href="#🚉">CDN</a></li>
+        <li><a href="#🥓">Enlaces</a></li>
+      </ul>
+    </nav>
+    <section id="▶️">
+      <h2>▶️ Introducción</h2>
+      <p>
+        Un sitio web es un conjunto de pàginas, elementos multimedia, información que estan alojados en un servidor.
+      </p>
+
+    </section>
+    <section id="🌊">
+      <h2>🌊 Flujo de aplicaciones web</h2>
+      <p>
+        Cuando se escribe la dirección de una página web en la barra del navegador o se hace click sobre un enlace se
+        está haciendo una petición para visualizar una página web y el contenido relacionado con esta.
+      </p>
+      <p>
+        La petición se envía desde el ordenador hasta el servidor del proveedor de internet. Este pasa la petición por
+        una serie de servidores interconectados que resuelven la dirección hasta que llega al servidor donde se alojan
+        los archivos de la web.
+      </p>
+      <p>
+        El servidor que aloja la página web responde la petición enviando el contenedor de vuelta mediante un camino
+        similar por los servidores de la red. Finalmente estos archivos son presentados en el explorador.
+      </p>
+      <p>
+        <img src="assets/img/website-diagram1.jpg" alt="website diagram">
+        <a href="https://www.ccseo.com/blog/542/websites-how-websites-work/">Image source</a>
+      </p>
+    </section>
+    <section id="📛">
+      <h2>📛 Dominio</h2>
+      <p>
+        Los navegadores acceden a los sitios web mediante una dirección IP (Internet Protocol), por ejemplo:
+        192.27.12.60. Obviamente es dificil acceder a las páginas web mediante las direcciones IP por eso se crearon los
+        dominios. Estos permiten ser recordados con mayor facilidad y ahorran direcciones IP ya que varios dominios
+        pueden apuntar a la misma.
+      </p>
+      <p>
+        Los servidores DNS (Domain Name Systrm) son los encargados de traducir los dominios a direcciones IP.
+        <img src="assets/img/dns-normal-en.png" alt="DNS">
+        <a href="https://www.kaspersky.es/blog/switcher-trojan-attacks-routers/9808/">Fuente imagen</a>
+      </p>
+    </section>
+    <section id="🏠">
+      <h2>️️️🏠 Alojamiento</h2>
+      <p>
+        El hosting o alojamiento web es el espacio donde se aloja una página web para que sea visible en Internet.
+        Existen distinitos tipos de hosting según la organización en el servidor:
+        <ul>
+          <li>
+            Hosting compartido: varios alojamientos comparten el mismo servidor. Acostumbra a ser más económico pero los
+            recursos son compartidos entre los distintos hostings.
+          </li>
+          <li>
+            Hosting dedicado: un solo servidor para un alojamiento. Permite tener el control y todos los recursos para
+            un solo hosting.
+          </li>
+          <li>
+            VPS, sevidor virtual privado: se crea un servidor virtual para un alojamiento. Es flexible y no se comparten
+            los recursos con otros alojamientos.
+          </li>
+          <li>
+            Cloud hosting: se paga por el uso de recursos que se necesitan en cada momento. Los recursos acostumbran a
+            ser ilimitados.
+          </li>
+        </ul>
+      </p>
+    </section>
+    <section id="🚉">
+      <h2>🚉 CDN</h2>
+      <p>
+        CDN (Content Delivery Network) es un conjunto de ubicaciones en el mundo, que redistribuyen localmente el
+        contenido de los servidores y guardan en caché los archivos que no necesitan actualización permanente.
+      </p>
+      <img src="assets/img/cdn.jpg" alt="CDN">
+    </section>
+    <section id="🥓">
+      <h2>🥓 Enlaces</h2>
+      <ul>
+        <li><a href="https://miposicionamientoweb.es/que-es-un-dominio/">Qué es un Dominio</a></li>
+        <li><a href="https://www.kimikaweb.com/2019/05/17/que-es-un-cdn/">Qué es un CDN</a></li>
+      </ul>
+    </section>
+  </article>
+  <script src="dist/prism.js"></script>
+</body>
+
+</html>

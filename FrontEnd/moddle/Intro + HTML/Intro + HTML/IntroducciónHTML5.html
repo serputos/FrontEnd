@@ -1,0 +1,325 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <title>Proyectos Web - 02 - HTML</title>
+  <link rel="stylesheet" type="text/css" href="dist/prism.css">
+  <link rel="stylesheet" type="text/css" href="dist/styles.css">
+</head>
+
+<body>
+  <article class="markdown-body">
+    <h1>Introducción al HTML</h1>
+    <nav>
+      <ul>
+        <li><a href="#intro">Introducción</a></li>
+        <li><a href="#doctype">Doctype</a></li>
+        <li><a href="#sintaxisHTML">Sintaxis HTML</a></li>
+        <li><a href="#elementosBasicos">Elementos básicos de HTML</a></li>
+      </ul>
+    </nav>
+    <section id="intro">
+      <h2>Introducción</h2>
+      <p>HTML, siglas de HyperText Markup Language, hace referencia al lenguaje de marcado
+        para la elaboración de páginas web. Es un estándar que define una estructura básica y
+        un código para la definición de contenido de una página web, como texto, imágenes, etc.
+      </p>
+      <p>Estructura HTML:</p>
+      <pre><code class="lang-html">
+          &lt;!DOCTYPE HTML&gt;
+          &lt;html lang="en"&gt;
+            &lt;head&gt;
+              &lt;meta charset="utf-8"&gt;
+              &lt;title&gt;Título&lt;/title&gt;
+            &lt;/head&gt;
+            &lt;body&gt;
+            &lt;/body&gt;
+          &lt;/html&gt;
+        </code></pre>
+    </section>
+
+    <section id="doctype">
+      <h2>Doctype</h2>
+      <p>Doctype es la primera etiqueta que debemos encontrar en un
+        documento HTML.
+      </p>
+      <p>El Doctype indica al navegador que lenguaje de marcado debe
+        procesar.
+      </p>
+      <p>Doctype XHTML:</p>
+      <pre><code class="lang-html">
+            &lt;!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+              "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd&gt;
+        </code></pre>
+
+      <p>Doctype HTML5:</p>
+      <pre><code class="lang-html">
+            &lt;!DOCTYPE html&gt;
+        </code></pre>
+
+      <h3>Doctype HTML5</h3>
+      <ul>
+        <li>El Doctype de HTML5 es mucho más sencillo.</li>
+        <li>No es necesario un namespace.</li>
+        <li>Mejora la comprensión del documento.</li>
+      </ul>
+
+      <pre><code class="lang-html">
+    &lt;!DOCTYPE html&gt;
+    &lt;html&gt;
+      &lt;head&gt;
+        &lt;meta charset="utf-8"&gt;
+        &lt;meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"&gt;
+        &lt;title&gt;My Page Title&lt;/title&gt;
+
+        &lt;script src="script.js"&gt;&lt;/script&gt;
+        &lt;link rel="stylesheet" type="text/css" href="style.css"&gt;
+      &lt;/head&gt;
+
+      &lt;body&gt;
+        &lt;img alt="Image test" src="path/image.jpg"&gt;
+      &lt;/body&gt;
+    &lt;/html&gt;
+        </code></pre>
+
+    </section>
+
+    <section id="sintaxisHTML">
+      <h2>Sintaxis HTML</h2>
+      <p>
+        &lt;html&gt; es la etiqueta que incluye el documento y todos los demás
+        elementos. También se denomina elemento raíz.
+      </p>
+      <p>
+        Puede usar dos atributos para definirlo:
+      </p>
+      <ul>
+        <li>lang: información del idioma</li>
+        <li>dir: dirección del texto</li>
+      </ul>
+
+      <h3>&lt;head&gt;</h3>
+      <p>Head es la etiqueta HTML que contiene la información sobre el documento.</p>
+      <p>Head nos indica:</p>
+      <ul>
+        <li><b>Título</b> de la página.</li>
+        <li><b>Metadata</b>, información de los datos que contiene.</li>
+        <li><b>Scripts y estilos</b>, para las funcionalidades y el diseño.</li>
+      </ul>
+
+      <h3>&lt;meta&gt;</h3>
+      <p>La etiqueta &lt;meta&gt; proporciona información sobre el documento
+        HTML</p>
+      <ul>
+        <li>Solo es legible por el navegador o programa.</li>
+        <li>Principalmente se utiliza para especificar:
+          <ul>
+            <li>Tipo de contenido.</li>
+            <li>Descripción del contenido.</li>
+            <li>Palabras clave.</li>
+            <li>Autor.</li>
+            <li>Última modificación del documento.</li>
+          </ul>
+        </li>
+        <li>Meta ‘Charset’ especifica la codificación de caracteres que se
+          utilizará:
+          <ul>
+            <li>UTF-8: Unicode</li>
+            <li>ISO-8859-1: Latin</li>
+          </ul>
+          <img alt="charset" src="assets/01-IntroducciónHTML5/charset.JPG">
+        </li>
+        <li>Meta ‘Viewport’ indica cómo debe comportarse el navegador móvil
+          dependiendo del dispositivo y su resolución:
+          <table>
+            <thead>
+              <tr>
+                <th>Propiedad</th>
+                <th>Descripción</th>
+                <th>Posibles </th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <th scope="row">width:</th>
+                <td>Indica el ancho de la página en el dispositivo.</td>
+                <td>device-width, Npx</td>
+              </tr>
+              <tr>
+                <th scope="row">height:</th>
+                <td>Indica el ancho de la página en el dispositivo.</td>
+                <td>device-height, Npx</td>
+              </tr>
+              <tr>
+                <th scope="row">initial-scale:</th>
+                <td>Indica cual será el zoom inicial de la página.</td>
+                <td>1, 0.xx</td>
+              </tr>
+              <tr>
+                <th scope="row">maximum-scale / minimum-scale:</th>
+                <td>Zoom máximo o mínimo permitido.</td>
+                <td>1, 0.xx</td>
+              </tr>
+              <tr>
+                <th scope="row">user-scalable:</th>
+                <td>Permitir al usuario hacer zoom.</td>
+                <td>yes, no</td>
+              </tr>
+            </tbody>
+          </table>
+        </li>
+        <li>Metadata de propietario.
+          <ul>
+            <li>Esta metadata está definida por aplicaciones externas que interactuarán con nuestra Web.</li>
+          </ul>
+        </li>
+      </ul>
+      <b>Ejemplo de &lt;head&gt;:</b>
+      <pre><code class="lang-html">
+        &lt;head&gt;
+          &lt;meta charset="utf-8"&gt;
+
+          &lt;title&gt;HTML&lt;/title&gt;
+
+          &lt;meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"&gt;
+          &lt;meta name="author" content="John Doe"&gt;
+          &lt;meta name="description" content="Introducción al HTML"&gt;
+
+          &lt;!-- External Files --&gt;
+          &lt;script src="script.js"&gt;&lt;/script&gt;
+          &lt;link rel="stylesheet" type="text/css" href="style.css"&gt;
+
+          &lt;!-- In situ code --&gt;
+          &lt;style type="text/css"&gt;
+            body{ background-color: black; }
+          &lt;/style&gt;
+          &lt;script type="text/javascript"&gt;
+            console.log("Hello World!");
+          &lt;/script&gt;
+        &lt;/head&gt;
+      </code></pre>
+
+      <h3>&lt;body&gt;</h3>
+      <p>Body es el contenedor de los contenidos. Su misión es contener los
+        elementos que dan forma al documento.</p>
+      <img alt="html45" src="assets/01-IntroducciónHTML5/html4-5.JPG">
+
+      <br>
+      <b>Estructura HTML4:</b>
+      <pre><code class="lang-html">
+        &lt;body&gt;
+          &lt;div id="header"&gt;&lt;/div&gt;
+          &lt;div id="nav"&gt;&lt;/div&gt;
+          &lt;div class="article"&gt;
+            &lt;div class="section"&gt;&lt;/div&gt;
+          &lt;/div&gt;
+          &lt;div id="sidebar"&gt;&lt;/div&gt;
+          &lt;div id="footer"&gt;&lt;/div&gt;
+        &lt;/body&gt;
+      </code></pre>
+      <b>Estructura HTML5:</b>
+      <pre><code class="lang-html">
+        &lt;body&gt;
+          &lt;header&gt;&lt;/header&gt;
+          &lt;nav&gt;&lt;/nav&gt;
+          &lt;article&gt;
+            &lt;section&gt;&lt;/section&gt;
+          &lt;/article&gt;
+          &lt;aside&gt;&lt;/aside&gt;
+          &lt;footer&gt;&lt;/footer&gt;
+        &lt;/body&gt;
+      </code></pre>
+    </section>
+    <section id="elementosBasicos">
+      <h2>Elementos Básicos de HTML</h2>
+      <!-- TODO: <p>, <img>, <a>, -->
+      <h3>Párrafos</h3>
+      <p>En HTML para distribuir el texto en párrafos se utiliza la etiqueta &lt;p&gt;. Esta etiqueta tiene abertura
+        y cierre &lt;p&gt;&lt;/p&gt; y el contenido pudiendo ser texto, imágenes, enlaces, etc. aparece en un bloque,
+        una caja.
+      </p>
+      <b>Ejemplo:</b>
+      <pre><code class="lang-html">
+          &lt;p&gt;Un párrafo que contiene texto.&lt;/p&gt;
+        </code></pre>
+
+      <h3>Párrafos</h3>
+      <p>En HTML para distribuir el texto en párrafos se utiliza la etiqueta &lt;p&gt;. Esta etiqueta tiene abertura
+        y cierre &lt;p&gt;&lt;/p&gt; y el contenido pudiendo ser texto, imágenes, enlaces, etc. aparece en un bloque,
+        una caja.
+      </p>
+      <b>Ejemplo:</b>
+      <pre><code class="lang-html">
+          &lt;p&gt;Un párrafo que contiene texto.&lt;/p&gt;
+        </code></pre>
+
+      <h3>Imágenes</h3>
+      <p>&lt;img&gt; es la etiqueta para insertar una imagen en el documento HTML. Para definir correctamente
+        la imagen que queremos mostrar se deben utilizar los siguientes atributos:</p>
+
+      <ul>
+        <li><b>src:</b> indica la ubicación de la imagen.</li>
+        <li><b>alt:</b> se define un texto alternativo, para que aparezca en el documento en el caso de que la
+          ubicación de la imagen sea incorrecta.</li>
+        <li><b>height:</b> define la altura en que queremos mostrar la imagen. Si no se utiliza este atributo, la
+          imagen aparecerá en su altura original.</li>
+        <li><b>width:</b> define el ancho en que queremos mostrar la imagen. Si no se utiliza este atributo, la
+          imagen aparecerá en su ancho original.</li>
+      </ul>
+
+      <b>Código:</b>
+      <pre><code class="lang-html">
+          &lt;img src="https://www.computerhope.com/jargon/h/img.gif" width="300" height="150" alt="Primera Imagen"&gt;
+        </code></pre>
+      <p><b>Ejemplo:</b></p>
+      <img src="https://www.computerhope.com/jargon/h/img.gif" width="300" height="150" alt="Primera Imagen">;
+
+      <h3>Enlaces</h3>
+      <p>Los enlaces se definen en el documento HTML con el elemento anchor &lt;a&gt;, que tiene abertura y
+        cierre &lt;a&gt;&lt;/a&gt; y su contenido será el texto del enlace. Para definir el punto de destino de un
+        vinculo o ambos debemos usar su atributo <b>href</b> junto con otros atributos que mencionaremos en
+        este documento:</p>
+
+      <ul>
+        <li><b>href: Éste es el único atributo requerido</b> para definir un hipervínculo. Indica el destino
+          del vínculo, que puede ser una URL o un fragmento de URL que es un nombre precedido
+          por el signo (#) y que indica que el destino se encuentra dentro del mismo documento en
+          que nos encontramos. Las URL no están restringidas a documentos Web (basados en
+          http). <b>Las URL pueden usar cualquier protocolo que el navegador sea capaz de
+            manejar.</b> Por ejemplo, file, ftp y mailto, funcionan en la mayoría de los navegadores.</li>
+
+        <li><b>name:</b> Este atributo es requerido cuando definimos un enlace interno (o ancla) en una
+          página. El valor del atributo name es similar al del atributo id y debe ser un identificador
+          alfanumérico único en el documento. En la especificación HTML 4.01, podemos usar tanto
+          id como name en un elemento &lt;a&gt;, siempre que ambos tengan idéntico valor.</li>
+
+        <li><b>rel:</b> Para anchor que contengan el atributo href, este atributo especifica la relación que hay
+          entre el objeto destino y aquél donde está el vínculo. El valor es una lista, separada por
+          comas, de relaciones. Los valores y su semántica se registrarán por alguna autoridad que
+          tenga sentido para el autor del documento. La relación por defecto, si no se especifica otra,
+          es void. El atributo rel debe usarse sólo si está presente el atributo href.
+        </li>
+
+        <li><b>target:</b> Este atributo especifica el marco destino en un vínculo. La información resultante
+          del vínculo se presentará en el marco seleccionado. Tanto los marcos (frame) como los de
+          tipo (inline frame) deben tener un nombre para poder ser referenciados. Sin embargo, hay
+          algunos nombres especiales. Estos incluyen: "_blank" que indica una nueva ventana,
+          "_parent" que indica el marco padre del marco que contiene el código fuente, "_self" que
+          indica el marco donde está el código fuente y "_top" que indica la ventana completa del
+          navegador.
+        </li>
+      </ul>
+      <pre><code class="lang-html">
+          &lt;a href="http://www.mozilla.com" target="_blank"&gt;Vínculo externo&lt;/a&gt;
+        </code></pre>
+      <p><b>Ejemplo:</b></p>
+      <a href="http://www.mozilla.com" target="_blank">Vínculo externo</a>
+
+    </section>
+  </article>
+  <script src="dist/prism.js"></script>
+</body>
+
+</html>

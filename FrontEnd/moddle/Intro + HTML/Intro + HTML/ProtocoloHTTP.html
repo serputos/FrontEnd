@@ -1,0 +1,223 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <title>Proyetos Web - 01 - Introduccón Web</title>
+  <link rel="stylesheet" type="text/css" href="dist/prism.css">
+  <link rel="stylesheet" type="text/css" href="dist/styles.css">
+</head>
+
+<body>
+  <article class="markdown-body">
+    <h1>Protocolo HTTP</h1>
+    <nav>
+      <ul>
+        <li><a href="#▶️">Introducción</a></li>
+        <li><a href="#🖋️">Sintaxis HTTP</a></li>
+        <li><a href="#💻">Métodos HTTP</a></li>
+        <li><a href="#⬇️">Método GET</a></li>
+        <li><a href="#⬆️">Método POST</a></li>
+        <li><a href="#🔢">Código Respuesta</a></li>
+      </ul>
+    </nav>
+    <section id="▶️">
+      <h2>▶️ Introducción</h2>
+      <p>
+        HTTP: Protocolo de Transferencia de Hipertexto (HTTP Hypertext Transfer Protocol) está
+        diseñado para permitir las comunicaciones entre cliente y servidor.
+      </p>
+      <p>
+        Ejemplo: Un navegador (cliente) envía una solicitud HTTP al servidor. El servidor devuelve una
+        respuesta al cliente. La respuesta contiene información del estado de la solicitud y también puede
+        contener el contenido solicitado.
+      </p>
+
+    </section>
+    <section id="🖋️">
+      <h2>🖋️ Sintaxis HTTP</h2>
+      <p>
+        Un petición básica de HTTP suele tener la siguiente sintaxis:
+        <pre>
+        <code class="lang-html">
+        GET /index.html HTTP/1.1
+        </code>
+        </pre>
+      </p>
+
+    </section>
+    <section id="💻">
+      <h2>💻 Métodos HTTP</h2>
+      <p>
+        <ul>
+          <li><b>GET</b>: devuelve el recurso identificado en la URL pedida.</li>
+          <li><b>POST</b>: al servidor que se prepare para recibir información del cliente. Suele
+            usarse para enviar información desde formularios.</li>
+          <li><b>HEAD</b>: Funciona como el GET, pero sin que el servidor devuelva el cuerpo del
+            mensaje. Es decir, sólo se devuelve la información de la cabecera.</li>
+          <li><b>PUT</b>: Envía el recurso identificado en la URL desde el cliente hacia el servidor.</li>
+          <li><b>DELETE</b>: Solicita al servidor que borre el recurso identificado con la URL.</li>
+          <li><b>OPTIONS</b>: Devuelve los métodos HTTP que soportar el Servidor</li>
+          <li><b>CONNECT</b>: Convierte la conexión de la petición a un túnel TCP/IP transparente</li>
+        </ul>
+      </p>
+    </section>
+    <section id="⬇️">
+      <h2>⬇️ Método GET</h2>
+      <p>
+        Las consultas con los pares clave/valor se envían en la URL de la petición GET:
+        <pre>
+            <code class="lang-html">
+                GET	/app/form.php?var1=value&var2=value2
+            </code>
+        </pre>
+        Las peticiones GET:
+        <ul>
+          <li>
+            Se pueden cachear.
+          </li>
+          <li>
+            Se mantienen en el historial del navegador.
+          </li>
+          <li>
+            Se recomienda no utilizar cuando los datos a enviar sean sensibles.
+          </li>
+          <li>
+            Tiene restricciones por longitud de URL.
+          </li>
+          <li>Solo debe utilizarse para solicitar datos.</li>
+        </ul>
+      </p>
+      <p>
+        Ejemplo básico respuesta GET:
+        <pre>
+          Petición
+            <code class="lang-html">
+                Remote	Address:128.30.52.100:80
+                Request	URL:	http://www.w3.org&var1=value1&var2=value2
+                Request	Method:	GET
+                Status	Code	200	OK
+            </code>
+        </pre>
+        <pre>
+            Cabecera de la respuesta
+              <code class="lang-html">
+                  HTTP/1.1	200	OK
+                  Date:Wed,	12	Aug	2015	17:07:31	GMT
+                  Server:Apache/2
+                  Last-Modified:Tue,	11	Aug	2015	13:20:14	GMT
+                  Accept-Ranges:bytes
+                  Content-Length:	37089
+                  Content-Type:	text/html
+                  Connection:	Closed
+              </code>
+        </pre>
+        <pre>
+            Contenido de la respuesta
+              <code class="lang-html">
+                  &lt;!doctype	html&gt;
+                  &lt;html&gt;
+                  &lt;body&gt;
+                  &lt;p&gt;Hello	World!&lt;/p&gt;
+                  &lt;/body&gt;
+                  &lt;/html&gt;
+              </code>
+        </pre>
+      </p>
+    </section>
+    <section id="⬆️">
+      <h2>⬆️ Método POST</h2>
+      <p>
+        En una petición POST los pares clave/valor se envían en el cuerpo del mensaje:
+        <pre>
+        <code class="lang-html">
+            POST	/app/form.php	HTTP/1.1
+            Host:	w3.org
+            var1=value1&var2=value2
+        </code>
+        </pre>
+      </p>
+      <p>
+        Observaciones en las peticiones Post:
+        <ul>
+          <li>No se almacena en cache.</li>
+          <li>No permanece en el historial del navegador.</li>
+          <li>No tiene restricciones por longitud de URL.</li>
+        </ul>
+        Ejemplo básico petición POST:
+      </p>
+      <pre>
+          Petición
+            <code class="lang-html">
+                Remote	Address:128.30.52.100:80
+                Request	URL:	http://www.w3.org
+                Request	Method:	POST
+                Status	Code: 302 Found
+            </code>
+        </pre>
+      <pre>
+            Cabecera de la petición
+              <code class="lang-html">
+                  HTTP/1.1	200	OK
+                  Date:Wed,	12	Aug 2015	17:07:31	GMT
+                  Server:Apache/2
+                  Last-Modified:Tue,	11	Aug	2015	13:20:14	GMT
+                  Accept-Ranges:bytes
+                  Content-Length:	23
+                  Content-Type:	application/x-www-form-urlencoded
+                  Connection:	Closed
+              </code>
+        </pre>
+      <pre>
+            Contenido de la petición
+              <code class="lang-html">
+                  var1=value1&var2=value2
+              </code>
+        </pre>
+    </section>
+    <section id="🔢">
+      <h2>🔢 Código Respuesta</h2>
+      <p>
+        Al responder a una petición del cliente, el servidor devuelve un número de tres dígitos que indica
+        si la petición se ha procesado correctamente. Estos códigos se pueden agrupar en cinco
+        categorías:
+        <ul>
+          <li><b>Respuestas informativas (1xx)</b> son respuestas provisionales. Estas respuestas indican
+            que el cliente debe continuar con la solicitud. Después de la versión HTTP/1.0 no se
+            utilizan.</li>
+          <li><b>Respuestas de éxito (2xx)</b> son para solicitudes procesadas con éxito. La respuesta 200
+            “OK”, es la más común, pero el código 206 “Contenido parcial” también se ve a menudo
+            cuando se solicitan archivo o datos multimedia como vídeo o audio.
+          </li>
+          <li><b>Respuestas de redirección (3xx)</b> indican que el recurso que el cliente ha solicitado se ha
+            movido y el servidor no es capaz de servirlo directamente. La mayor parte de estas
+            respuestas contiene información de la ubicación del recurso movido que nos indica donde
+            encontrarlo. Las respuestas más comunes de este tipo son los 301 “movido
+            permanentemente”, indicando que la URI dada ya no es válida y se ha trasladado a otro
+            lugar, y el código 302 “encontrado” que indica que el recurso ha sido trasladado
+            temporalmente y debe volver a solicitarlo.
+            Recomendaciones: la redirección 301 “Movido permanentemente” se utiliza normalmente
+            cuando se reorganiza una web y sus URIs cambian. Esto permite a que los usuarios o
+            motores de búsqueda lleguen al recurso en la nueva ubicación.
+          </li>
+          <li><b>Respuestas de error del cliente (4xx)</b> indican que la solicitud enviada por el cliente es
+            inválida, incompleta, o no tiene suficientes permisos para llevarse a cabo. La respuesta
+            más común es 404 “No encontrado” que se envía cuando la URI solicitada no existe. Otros
+            códigos se suelen mostrar al usuario final, como 400 “Solicitud incorrecta”, que aparece
+            cuando la solicitud no es una solicitud HTTP o 403 “Prohibido”, cuando la solicitud no tiene
+            permisos para acceder al recurso.
+          </li>
+          <li><b>Respuestas de error del servidor (5xx)</b> indicar que el servidor tiene problemas para
+            gestionar la solicitud del cliente. Las respuestas más comunes son 500 “Error Interno del
+            Servidor”, error genérico que indica un error en el servidor o 503 “Servicio no disponible”
+            que indica que el servidor no puede procesar la solicitud debido a un problema temporal.
+          </li>
+        </ul>
+      </p>
+    </section>
+  </article>
+  <script src="dist/prism.js"></script>
+</body>
+
+</html>

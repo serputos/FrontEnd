@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <title>Proyetos Web - 01 - Introduccón Web</title>
+  <link rel="stylesheet" type="text/css" href="dist/prism.css">
+  <link rel="stylesheet" type="text/css" href="dist/styles.css">
+</head>
+
+<body>
+  <article class="markdown-body">
+    <h1>DOM Y CSSOM</h1>
+    <nav>
+      <ul>
+        <li><a href="#▶️">Introducción</a></li>
+        <li><a href="#📰">DOM</a></li>
+        <li><a href="#🎨">CSSOM</a></li>
+        <li><a href="🖥️">Render</a></li>
+        <li><a href="#🎮">JavaScript</a></li>
+        <li><a href="#🥓">Enlaces</a></li>
+      </ul>
+    </nav>
+    <section id="▶️">
+      <h2>▶️ Introducción</h2>
+      <p>
+        Para que el navegador pueda representar la página, debe construir los árboles del DOM y el CSSOM. En
+        consecuencia, debemos asegurarnos de proporcionar lenguaje de marcado HTML y CSS al navegador lo más rápido
+        posible.
+      </p>
+    </section>
+    <section id="📰">
+      <h2>📰 DOM</h2>
+      <p>
+        Pongamos por ejemplo el siguiente código HTML:
+        <pre>
+          <code class="lang-html">
+              &lt;!DOCTYPE html&gt;
+              &lt;html&gt;
+                &lt;head&gt;
+                  &lt;meta name=&quot;viewport&quot; content=&quot;width=device-width,initial-scale=1&quot;&gt;
+                  &lt;link href=&quot;style.css&quot; rel=&quot;stylesheet&quot;&gt;
+                  &lt;title&gt;Critical Path&lt;/title&gt;
+                &lt;/head&gt;
+                &lt;body&gt;
+                  &lt;p&gt;Hello &lt;span&gt;web performance&lt;/span&gt; students!&lt;/p&gt;
+                  &lt;div&gt;&lt;img src=&quot;awesome-photo.jpg&quot;&gt;&lt;/div&gt;
+                &lt;/body&gt;
+              &lt;/html&gt;
+          </code>
+        </pre>
+      </p>
+      <p>
+        El navegador recibe el HTML y empieza a procesar la información:
+        <ul>
+          <li>
+            Conversión: el navegador lee los bytes sin procesar del HTML y los traduce en caracteres según la
+            codificación del archivo.
+          </li>
+          <li>
+            Conversión en tokens: el navegador convierte cadenas de caracteres en tokens especificados por el
+            estándar HTML5 de la W3C. Cada token tiene un significado especial y un conjunto de reglas.
+          </li>
+          <li>
+            Lexicalización: los tokens emitidos se convierten en objetos que definen sus propiedades y reglas.
+          </li>
+          <li>
+            Construcción del DOM: Por último, debido a que el lenguaje de marcado HTML define relaciones entre etiquetas
+            diferentes, los objetos creados se vinculan en una estructura
+            de datos en forma de árbol.
+          </li>
+        </ul>
+        <img src="assets/img/dom.png" alt="DOM"> <a
+          href="https://developers.google.com/web/fundamentals/performance/critical-rendering-path/constructing-the-object-model?hl=es-419">Fuente
+          imagen</a>
+      </p>
+
+    </section>
+    <section id="🎨">
+      <h2>🎨 CSSOM</h2>
+      <p>
+        El CSSOM (CSS Object Model) es el encargado de vincular los estilos CSS con los objectos del DOM.
+      </p>
+      <p>
+        Mientras el navegador construye el DOM, si encuentra una etiqueta que apunta a un archivo CSS externo pide la
+        descarga de este porque prevé que lo va a necesitar para representar el contenido de la página.
+      </p>
+      <p>
+        El proceso de construcción del CSSOM es igual al del DOM: los bytes se transforman en carácteres, esots en tokes
+        y finalmente en nodos que relacionados formaran la estructura de objetos.
+      </p>
+      <p>
+        <img src="assets/img/cssom.png" alt="CSSOM"> <a
+          href="https://developers.google.com/web/fundamentals/performance/critical-rendering-path/constructing-the-object-model?hl=es-419">Fuente
+          imagen</a>
+      </p>
+    </section>
+    <section id="🖥️">
+      <h2>🖥️ Render</h2>
+      <p>
+        Una vez completados el DOM y el CSSOM el navegador los combina para crear el Árbol de Render.
+      </p>
+      <p>
+        Para ello recorre todos los Nodos que forman parte del DOM y si son visibles los añade al árbol de renderizado
+        con los estilos referenciados.
+      </p>
+      <p><img src="assets/img/render-tree-construction.png" alt="Render Tree"><a
+          href="https://developers.google.com/web/fundamentals/performance/critical-rendering-path/render-tree-construction?hl=es-419">Fuente
+          imagen</a></p>
+      <p>El siguiente paso es el de <i>layout</i> en el que se calcula la geometría de cada elemento para posicionarlo
+        dentro de la pantalla.</p>
+      <p>
+        El último paso es el de <i>paint</i>, el árbol de representación se representa en píxeles en la
+        pantalla.
+      </p>
+    </section>
+    <section id="🎮">
+      <h2>🎮 JavaScript</h2>
+      <p>
+        Los <i>scripts</i> implementados en JavaScript se empiezan a descargar en el momento en el que se encuentra una
+        etiqueta de script con el atributo src durante la construcción del DOM. Una vez descargado se ejecuta, ello
+        puede bloquear la construcción del DOM, a menos que se indique lo contrario con atributos para hacer el script
+        asincrono.
+      </p>
+      <p>
+        Como JavaScript puede consultar y modificar el DOM y el CSSOM puede bloquearlos. Por ejemplo: si tenemos una
+        etiqueta script en la mitad de nuestro HTML el DOM se pausará en el punto del script. Se ejecutará y cuando
+        termine seguirá generando el DOM. Esto haría que la página se bloqueara a causa del script.
+      </p>
+    </section>
+
+    <section id="🥓">
+      <h2>🥓 Enlaces</h2>
+      <ul>
+        <li>
+          <a
+            href="https://developers.google.com/web/fundamentals/performance/critical-rendering-path/constructing-the-object-model">Construction
+            the Object Model</a>
+        </li>
+        <li><a
+            href="https://developers.google.com/web/fundamentals/performance/critical-rendering-path/render-tree-construction">Render
+            Tree Construnction</a></li>
+        <li><a
+            href="https://developers.google.com/web/fundamentals/performance/critical-rendering-path/adding-interactivity-with-javascript">Adding
+            Interactivity with JS</a></li>
+      </ul>
+    </section>
+  </article>
+  <script src="dist/prism.js"></script>
+</body>
+
+</html>
