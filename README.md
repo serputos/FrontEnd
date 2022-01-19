@@ -1,2 +1,2 @@
 # FrontEnd
-practicas de fronEnd
+practicas de frontEnd
