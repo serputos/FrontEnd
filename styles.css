@@ -1,0 +1,26 @@
+h1{font-size: 36px; font-family: Calibri; color: white ;font-weight: bold; position: absolute; width: 244px;height: 33px; left: 49px;top: 24px;}
+h2{font-size: 14px; font-family: Calibri;color: white;font-weight: bold; position: absolute; width: 129px; height: 9px;left: 49px;top: 67px;}
+
+h3{font-size: 24px; font-family: sans-serif;}
+#home{position: absolute; width: 65px; height: 28px; left: 932px; top: 39px;}
+#about{position: absolute;width: 64px;height: 28px;left: 1061px;top: 39px;}
+#contact{position: absolute;width: 84px;height: 28px;left: 1188px;top: 39px;}
+
+
+
+h4{font-size: 64px; font-family: Calibri;position: absolute;width: 485px;height: 174px;left: 121px; top: 100px;}
+
+.encabezado{position: absolute;width: 100%;height: 120px;left: 0px;top: 0px;background: #8E2121;}
+.encabezadoAbajo{position: absolute;width: 100%;height: 141px; left: 0px;top: 583px; background: #8E2121;}
+
+#textoInicio{position: absolute;width: 440px;height: 80px;left: 121px;top: 347px;}
+#contacto2{position: absolute;width: 215px; height: 77px; left: 49px;top: 610px; color:white}
+#instagram{position: absolute;width: 40px; height: 40px;left: 87px; top: 662px;}
+#linkedin{position: absolute;width: 34px;height: 34px;left: 49px;top: 660px;}
+
+
+
+
+#CV{position: absolute;width: 151px;height: 43px;left: 120px;top: 453px;font-family: Calibri;font-size: 30px;}
+#portfolio{position: absolute;width: 191px;height: 43px;left: 300px;top: 453px;font-family: Calibri;font-size: 30px;}
+
