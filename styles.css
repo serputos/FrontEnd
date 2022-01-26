@@ -1,5 +1,10 @@
-body {
+.body {
   margin: 0;
+  column-gap: 20px;
+  display: flex;
+  flex-direction: column;
+  height: 100vh;
+  justify-content: space-between;
 }
 
 h4 {
@@ -19,7 +24,6 @@ h4 {
   align-items: center;
   padding-right: 60px;
   padding-left: 20px;
-  justify-content: flex-end;
 }
 
 .encabezadoChild {
@@ -38,12 +42,13 @@ h4 {
 }
 
 .encabezadoAbajo {
-  position: absolute;
-  width: 100%;
-  height: 141px;
-  left: 0px;
-  top: 583px;
+  height: 120px;
+
+  padding-left: 20px;
   background: #8e2121;
+
+  display: flex;
+  flex-direction: column;
 }
 
 #textoInicio {
@@ -54,26 +59,17 @@ h4 {
   top: 347px;
 }
 #contacto2 {
-  position: absolute;
-  width: 215px;
-  height: 77px;
-  left: 49px;
-  top: 610px;
   color: white;
 }
 #instagram {
-  position: absolute;
+  position: relative;
   width: 40px;
   height: 40px;
-  left: 87px;
-  top: 662px;
 }
 #linkedin {
-  position: absolute;
+  position: relative;
   width: 34px;
   height: 34px;
-  left: 49px;
-  top: 660px;
 }
 
 #CV {
@@ -93,4 +89,18 @@ h4 {
   top: 453px;
   font-family: Calibri;
   font-size: 30px;
+}
+.formulario input {
+  width: 100%;
+  padding: 12px 20px;
+  margin: 10px 0;
+}
+
+.formulario {
+  font-family: Calibri;
+  padding: 20px;
+}
+
+.formulario input[type="submit"] {
+  background-color: #8e2121;
 }
