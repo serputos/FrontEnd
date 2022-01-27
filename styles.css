@@ -1,6 +1,6 @@
 .body {
   margin: 0;
-  column-gap: 20px;
+  column-gap: 10px;
   display: flex;
   flex-direction: column;
   height: 100vh;
@@ -9,32 +9,53 @@
 
 h4 {
   font-size: 64px;
-  font-family: Calibri;
-  position: absolute;
-  width: 485px;
-  height: 174px;
-  left: 121px;
-  top: 100px;
+  font-family: "Roboto Mono";
+  margin-top: -18px;
+  margin-bottom: 10px;
 }
 
 .encabezado {
-  height: 120px;
-  background: #8e2121;
+  height: 255px;
+
   display: flex;
-  align-items: center;
+  background: -prefix-linear-gradient(top, #050f81 30%, white);
+  background: linear-gradient(to bottom, #050f81 30%, white);
+
   padding-right: 60px;
   padding-left: 20px;
+  padding-top: 20px;
+  border-bottom-left-radius: 5px;
+  border-bottom-right-radius: 5px;
+}
+.bodyText {
+  display: flex;
+  justify-content: flex-start;
+  padding-left: 170px;
+}
+.bodyContent {
+  display: flex;
+
+  flex-direction: column;
+  justify-content: space-between;
+  justify-content: flex-start;
 }
 
 .encabezadoChild {
   display: flex;
-  font-size: 24px;
-  font-family: sans-serif;
+
   gap: 30px;
+}
+h3 a {
+  color: white;
+  font-family: "Roboto", sans-serif;
+
+  font-size: 24px;
+  font-weight: lighter;
+  text-decoration: none;
 }
 
 .titulo {
-  font-family: Calibri;
+  font-family: "Lato", sans-serif;
   color: white;
   display: flex;
   order: -1;
@@ -42,21 +63,49 @@ h4 {
 }
 
 .encabezadoAbajo {
-  height: 120px;
+  height: 230px;
+  margin-top: -122px;
 
-  padding-left: 20px;
-  background: #8e2121;
+  filter: invert(90%) sepia(56%) saturate(5211%) hue-rotate(233deg)
+    brightness(98%) contrast(115%);
+  min-height: 177px;
 
   display: flex;
   flex-direction: column;
 }
+.parallax > use {
+  animation: move-forever 25s cubic-bezier(0.55, 0.5, 0.45, 0.5) infinite;
+}
+.parallax > use:nth-child(1) {
+  animation-delay: -2s;
+  animation-duration: 7s;
+}
+.parallax > use:nth-child(2) {
+  animation-delay: -3s;
+  animation-duration: 10s;
+}
+.parallax > use:nth-child(3) {
+  animation-delay: -4s;
+  animation-duration: 13s;
+}
+.parallax > use:nth-child(4) {
+  animation-delay: -5s;
+  animation-duration: 20s;
+}
+@keyframes move-forever {
+  0% {
+    transform: translate3d(-90px, 0, 0);
+  }
+  100% {
+    transform: translate3d(85px, 0, 0);
+  }
+}
 
 #textoInicio {
-  position: absolute;
   width: 440px;
   height: 80px;
-  left: 121px;
-  top: 347px;
+  padding-top: 0px;
+  padding-bottom: 20px;
 }
 #contacto2 {
   color: white;
@@ -73,23 +122,30 @@ h4 {
 }
 
 #CV {
-  position: absolute;
-  width: 151px;
-  height: 43px;
-  left: 120px;
-  top: 453px;
+  padding: 10px;
   font-family: Calibri;
   font-size: 30px;
 }
 #portfolio {
-  position: absolute;
-  width: 191px;
-  height: 43px;
-  left: 300px;
-  top: 453px;
+  padding: 10px;
   font-family: Calibri;
   font-size: 30px;
 }
+
+#imagenPerfil {
+  border-radius: 50%;
+  height: 500px;
+  width: 500px;
+  margin-top: -75px;
+}
+
+.flexBody {
+  display: flex;
+  justify-content: space-between;
+  margin-right: 150px;
+  margin-top: -50px;
+}
+
 .formulario input {
   width: 100%;
   padding: 12px 20px;
@@ -98,9 +154,32 @@ h4 {
 
 .formulario {
   font-family: Calibri;
-  padding: 20px;
+  padding: 50px;
+  margin-top: -110px;
 }
 
 .formulario input[type="submit"] {
-  background-color: #8e2121;
+  font-family: "Roboto Mono";
+  font-weight: bold;
+  border-radius: 20px;
+  cursor: pointer;
+  background-color: #5c66db;
+  border: 1px solid #414bb8;
+  letter-spacing: 5px;
+}
+
+.button {
+  display: flex;
+  justify-content: space-between;
+  padding-right: 25px;
+}
+.button button {
+  font-family: "Roboto Mono";
+  font-size: 30px;
+
+  border-radius: 20px;
+  cursor: pointer;
+  background-color: #5c66db;
+  border: 1px solid #414bb8;
+  letter-spacing: 1px;
 }
