@@ -51,6 +51,9 @@ h3 a {
   font-weight: lighter;
   text-decoration: none;
 }
+.encabezadoChild :hover {
+  font-size: 200%;
+}
 
 .titulo {
   font-family: "Lato", sans-serif;
