@@ -28,8 +28,6 @@ h4 {
   border-bottom-right-radius: 5px;
 }
 .bodyText {
-  display: flex;
-  justify-content: flex-start;
   padding-left: 170px;
 }
 .bodyContent {
@@ -41,9 +39,9 @@ h4 {
 }
 
 .encabezadoChild {
-  display: flex;
+  display: inline-flex;
 
-  gap: 30px;
+  gap: 100px;
 }
 h3 a {
   color: white;
