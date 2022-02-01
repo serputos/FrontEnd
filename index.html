@@ -3,6 +3,7 @@
     <link rel="stylesheet" href="styles.css" />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link
       href="https://fonts.googleapis.com/css2?family=Roboto+Mono:ital,wght@0,300;0,400;1,200&display=swap"
       rel="stylesheet"
@@ -15,6 +16,15 @@
         <h3><a href="index.html">Home</a></h3>
         <h3><a href="AboutMe.html">About</a></h3>
         <h3><a href="Contacto.html">Contact</a></h3>
+      </div>
+
+      <div class="toggle">
+        <div class="toggle-button" id="toggle-button">☰</div>
+        <div class="toggle-menu menu-hiden" id="toggle-menu">
+          <h3><a href="index.html">Home</a></h3>
+          <h3><a href="AboutMe.html">About</a></h3>
+          <h3><a href="Contacto.html">Contact</a></h3>
+        </div>
       </div>
 
       <div class="titulo">
@@ -49,31 +59,9 @@
       <img src="fotos/perfil.jpg" id="imagenPerfil" />
     </div>
 
-    <!-- <div class="encabezadoAbajo">
-      <p id="contacto2" style="font-size: 12px; font-family: sans-serif">
-        srpuna94@gmail.com<br />telf.616190468
-      </p>
-      <div>
-        <a
-          id="linkedin"
-          href="https://es.linkedin.com/in/sergi-pruna-bb0115161"
-        >
-          <img
-            src="https://w7.pngwing.com/pngs/1012/692/png-transparent-computer-icons-linkedin-social-media-social-media-text-rectangle-logo.png"
-            width="36"
-            height="36"
-        /></a>
-        <a id="instagram" href="https://www.instagram.com/spruna/?hl=es"
-          ><img
-            src="https://e7.pngegg.com/pngimages/748/133/png-clipart-computer-icons-youtube-logo-business-blog-instagram-area-symbol.png"
-            width="34"
-            height="34"
-        /></a>
-      </div>
-    </div> -->
-
     <div class="encabezadoAbajo">
       <svg
+        id="waves"
         class="waves"
         xmlns="http://www.w3.org/2000/svg"
         xmlns:xlink="http://www.w3.org/1999/xlink"
@@ -109,9 +97,20 @@
           <use xlink:href="#gentle-wave" x="48" y="7" fill="#fff" />
         </g>
       </svg>
+      <div class="contacto2">
+        <p class="contacto3">srpuna94@gmail.com<br />telf.616190468</p>
+      </div>
     </div>
-    <div class="contacto2">
-      <p class="contacto3">srpuna94@gmail.com<br />telf.616190468</p>
-    </div>
+
+    <script>
+      /*$(document).ready(function () {
+        $("#toggle-button").click(function () {
+          $("#toggle-menu").toggle();
+        });
+      });*/
+      document.getElementById("toggle-button").onclick = function () {
+        document.querySelector("#toggle-menu").classList.toggle("menu-hiden");
+      };
+    </script>
   </body>
 </html>

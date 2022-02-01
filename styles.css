@@ -7,42 +7,7 @@
   justify-content: space-between;
 }
 
-h4 {
-  font-size: 64px;
-  font-family: "Roboto Mono";
-  margin-top: -18px;
-  margin-bottom: 10px;
-}
-
-.encabezado {
-  height: 255px;
-
-  display: flex;
-  background: -prefix-linear-gradient(top, #050f81 30%, white);
-  background: linear-gradient(to bottom, #050f81 30%, white);
-
-  padding-right: 60px;
-  padding-left: 20px;
-  padding-top: 20px;
-  border-bottom-left-radius: 5px;
-  border-bottom-right-radius: 5px;
-}
-.bodyText {
-  padding-left: 170px;
-}
-.bodyContent {
-  display: flex;
-
-  flex-direction: column;
-  justify-content: space-between;
-  justify-content: flex-start;
-}
-
-.encabezadoChild {
-  display: inline-flex;
-
-  gap: 100px;
-}
+/*encabezado arriba*/
 h3 a {
   color: white;
   font-family: "Roboto", sans-serif;
@@ -51,28 +16,161 @@ h3 a {
   font-weight: lighter;
   text-decoration: none;
 }
+h4 {
+  font-size: 64px;
+  font-family: "Roboto Mono";
+  margin-top: -18px;
+  margin-bottom: 10px;
+}
+
+.encabezado {
+  height: 200px;
+
+  display: flex;
+  background: -prefix-linear-gradient(top, #050f81 30%, white);
+  background: linear-gradient(to bottom, #050f81 30%, white);
+
+  padding-right: 60px;
+  padding-left: 20px;
+  padding-top: 20px;
+
+  margin-bottom: 100px;
+}
+.encabezadoChild {
+  display: inline-flex;
+
+  gap: 100px;
+}
+
 .encabezadoChild :hover {
   font-size: 200%;
 }
-
 .titulo {
   font-family: "Lato", sans-serif;
   color: white;
   display: flex;
   order: -1;
   flex-grow: 1;
+  margin-right: 20px;
+}
+/*TOGGLE MENU*/
+.toggle {
+  display: none;
+}
+.toggle-button {
+  color: white;
+  text-align: center;
+
+  display: flex;
+  justify-content: flex-end;
+  cursor: pointer;
+
+  font-size: 42px;
+  font-weight: bold;
+  margin-top: 17px;
+}
+.toggle-menu {
+  display: none;
 }
 
+.toggle-menu h3 {
+  text-align: center;
+}
+
+.toggle-menu a:hover {
+  color: black;
+  background: white;
+}
+
+/*cuerpo web*/
+
+.bodyText {
+  padding-left: 20px;
+}
+.bodyContent {
+  display: flex;
+
+  flex-direction: column;
+}
+#textoInicio {
+  width: 440px;
+  height: 80px;
+  padding-top: 0px;
+  padding-bottom: 20px;
+}
+
+#CV {
+  padding: 10px;
+  font-family: Calibri;
+  font-size: 30px;
+}
+#portfolio {
+  padding: 10px;
+  font-family: Calibri;
+  font-size: 30px;
+}
+
+#imagenPerfil {
+  border-radius: 50%;
+  height: 500px;
+  width: 500px;
+  margin-top: -75px;
+  padding-right: 20px;
+}
+
+.button {
+  display: flex;
+  justify-content: space-between;
+  padding-right: 25px;
+}
+.button button {
+  font-family: "Roboto Mono";
+  font-size: 30px;
+
+  border-radius: 20px;
+  cursor: pointer;
+  background-color: #5c66db;
+  border: 1px solid #414bb8;
+  letter-spacing: 1px;
+}
+.formulario input {
+  width: 100%;
+  padding: 12px 20px;
+  margin: 10px 0;
+}
+
+.formulario {
+  font-family: Calibri;
+  padding: 50px;
+  margin-top: -110px;
+}
+
+.formulario input[type="submit"] {
+  font-family: "Roboto Mono";
+  font-weight: bold;
+  border-radius: 20px;
+  cursor: pointer;
+  background-color: #5c66db;
+  border: 1px solid #414bb8;
+  letter-spacing: 5px;
+}
+.flexBody {
+  display: flex;
+  justify-content: space-around;
+}
+
+/*ENCABEZADO ABAJO*/
 .encabezadoAbajo {
-  height: 230px;
-  margin-top: 0px;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  margin-top: -200px;
+}
+#waves {
+  max-height: 30%;
 
   filter: invert(90%) sepia(56%) saturate(5211%) hue-rotate(233deg)
     brightness(98%) contrast(115%);
-  min-height: 177px;
-
-  display: flex;
-  flex-direction: column;
 }
 .parallax > use {
   animation: move-forever 25s cubic-bezier(0.55, 0.5, 0.45, 0.5) infinite;
@@ -102,17 +200,13 @@ h3 a {
   }
 }
 
-#textoInicio {
-  width: 440px;
-  height: 80px;
-  padding-top: 0px;
-  padding-bottom: 20px;
-}
 .contacto2 {
   font-size: 18px;
   font-family: Calibri;
   background-color: #0d1785;
   color: white;
+  margin-top: 0px;
+  border: 1px solid #0d1785;
 }
 .contacto3 {
   margin-left: 16px;
@@ -120,78 +214,59 @@ h3 a {
   font-weight: lighter;
   letter-spacing: 3px;
 }
-#instagram {
-  position: relative;
-  width: 40px;
-  height: 40px;
-}
-#linkedin {
-  position: relative;
-  width: 34px;
-  height: 34px;
+
+/*QUERIES TO Tablet*/
+
+@media only screen and (max-width: 1024px) {
+  #waves {
+    display: none;
+  }
+  #imagenPerfil {
+    display: none;
+  }
+  .encabezadoAbajo {
+    margin-top: 0px;
+  }
+  .encabezado {
+    margin-bottom: -45px;
+  }
+  .encabezadoChild {
+    display: none;
+  }
+  .toggle {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .toggle-menu {
+    display: flex;
+    flex-direction: column;
+    background-color: #7b82ce;
+    padding-left: 30px;
+    padding-right: 30px;
+    border-radius: 10px;
+  }
+  .menu-hiden {
+    display: none;
+  }
+  
 }
 
-#CV {
-  padding: 10px;
-  font-family: Calibri;
-  font-size: 30px;
-}
-#portfolio {
-  padding: 10px;
-  font-family: Calibri;
-  font-size: 30px;
-}
+/*QUERIES TO MOBILE*/
 
-#imagenPerfil {
-  border-radius: 50%;
-  height: 500px;
-  width: 500px;
-  margin-top: -75px;
-}
+@media only screen and (max-width: 320px) {
+  .encabezadoAbajo {
+    display: none;
+  }
 
-.flexBody {
-  display: flex;
-  justify-content: space-between;
-  margin-right: 300px;
-  margin-left: 24px;
-  margin-top: 61px;
-  gap: 160px;
+  #imagenPerfil {
+    display: none;
+  }
+  .encabezadoChild {
+    display: none;
+  }
+  .flexBody{
+    display: block;
+  }
 }
-
-.formulario input {
-  width: 100%;
-  padding: 12px 20px;
-  margin: 10px 0;
-}
-
-.formulario {
-  font-family: Calibri;
-  padding: 50px;
-  margin-top: -110px;
-}
-
-.formulario input[type="submit"] {
-  font-family: "Roboto Mono";
-  font-weight: bold;
-  border-radius: 20px;
-  cursor: pointer;
-  background-color: #5c66db;
-  border: 1px solid #414bb8;
-  letter-spacing: 5px;
-}
-
-.button {
-  display: flex;
-  justify-content: space-between;
-  padding-right: 25px;
-}
-.button button {
-  font-family: "Roboto Mono";
-  font-size: 30px;
-
-  border-radius: 20px;
-  cursor: pointer;
-  background-color: #5c66db;
-  border: 1px solid #414bb8;
-  letter-spacing: 1px;
 }
