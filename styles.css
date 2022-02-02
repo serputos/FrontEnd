@@ -1,6 +1,6 @@
 .body {
   margin: 0;
-  column-gap: 10px;
+
   display: flex;
   flex-direction: column;
   height: 100vh;
@@ -24,26 +24,36 @@ h4 {
 }
 
 .encabezado {
-  height: 200px;
-
   display: flex;
-  background: -prefix-linear-gradient(top, #050f81 30%, white);
+
   background: linear-gradient(to bottom, #050f81 30%, white);
 
   padding-right: 60px;
   padding-left: 20px;
   padding-top: 20px;
-
-  margin-bottom: 100px;
+  padding-bottom: 40px;
+  position: fixed;
+  top: 0%;
+  width: 100%;
 }
 .encabezadoChild {
   display: inline-flex;
 
   gap: 100px;
+  padding-right: 10%;
 }
 
 .encabezadoChild :hover {
   font-size: 200%;
+}
+
+@keyframes titulo-animation {
+  from {
+    transform: scale(100%);
+  }
+  to {
+    transform: scale(95%);
+  }
 }
 .titulo {
   font-family: "Lato", sans-serif;
@@ -52,8 +62,19 @@ h4 {
   order: -1;
   flex-grow: 1;
   margin-right: 20px;
+
+  animation-name: titulo-animation;
+  animation-duration: 1.5s;
+  animation-timing-function: ease-in-out;
+  animation-delay: 0;
+  animation-iteration-count: infinite;
+  animation-direction: alternate;
 }
+
 /*TOGGLE MENU*/
+.encabezado {
+  max-height: 95px;
+}
 .toggle {
   display: none;
 }
@@ -68,7 +89,9 @@ h4 {
   font-size: 42px;
   font-weight: bold;
   margin-top: 17px;
+  padding-right: 70px;
 }
+
 .toggle-menu {
   display: none;
 }
@@ -79,22 +102,18 @@ h4 {
 
 .toggle-menu a:hover {
   color: black;
-  background: white;
 }
 
 /*cuerpo web*/
 
-.bodyText {
-  padding-left: 20px;
-}
 .bodyContent {
   display: flex;
 
+  margin-top: 20px;
   flex-direction: column;
+  gap: 30px;
 }
 #textoInicio {
-  width: 440px;
-  height: 80px;
   padding-top: 0px;
   padding-bottom: 20px;
 }
@@ -109,19 +128,30 @@ h4 {
   font-family: Calibri;
   font-size: 30px;
 }
+.imagen {
+  height: 500px;
+  width: 500px;
+  justify-content: space-around;
+  align-items: center;
+  display: flex;
+}
 
 #imagenPerfil {
   border-radius: 50%;
   height: 500px;
   width: 500px;
-  margin-top: -75px;
+
   padding-right: 20px;
+  transition: all 500ms ease-in-out;
+}
+#imagenPerfil:hover {
+  height: 300px;
+  width: 300px;
 }
 
 .button {
   display: flex;
   justify-content: space-between;
-  padding-right: 25px;
 }
 .button button {
   font-family: "Roboto Mono";
@@ -142,7 +172,8 @@ h4 {
 .formulario {
   font-family: Calibri;
   padding: 50px;
-  margin-top: -110px;
+  align-items: center;
+  margin-top: 220px;
 }
 
 .formulario input[type="submit"] {
@@ -154,9 +185,12 @@ h4 {
   border: 1px solid #414bb8;
   letter-spacing: 5px;
 }
+
 .flexBody {
   display: flex;
   justify-content: space-around;
+  align-items: center;
+  margin-top: 200px;
 }
 
 /*ENCABEZADO ABAJO*/
@@ -164,7 +198,6 @@ h4 {
   display: flex;
   flex-direction: column;
   justify-content: flex-end;
-  margin-top: -200px;
 }
 #waves {
   max-height: 30%;
@@ -221,15 +254,15 @@ h4 {
   #waves {
     display: none;
   }
+  .imagen {
+    display: none;
+  }
   #imagenPerfil {
     display: none;
   }
   .encabezadoAbajo {
-    margin-top: 0px;
   }
-  .encabezado {
-    margin-bottom: -45px;
-  }
+
   .encabezadoChild {
     display: none;
   }
@@ -245,17 +278,23 @@ h4 {
     padding-left: 30px;
     padding-right: 30px;
     border-radius: 10px;
+    margin-right: 70px;
   }
   .menu-hiden {
     display: none;
   }
-  
+  .flexBody {
+    margin-top: 220px;
+  }
 }
 
 /*QUERIES TO MOBILE*/
 
-@media only screen and (max-width: 320px) {
+@media only screen and (max-width: 390px) {
   .encabezadoAbajo {
+    display: none;
+  }
+  .contacto2 {
     display: none;
   }
 
@@ -265,8 +304,10 @@ h4 {
   .encabezadoChild {
     display: none;
   }
-  .flexBody{
-    display: block;
+  .flexBody {
+    margin-top: 220px;
   }
-}
+  .imagen {
+    display: none;
+  }
 }

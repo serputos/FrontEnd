@@ -4,6 +4,7 @@
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!--PARA ESCALAR-->
     <link
       href="https://fonts.googleapis.com/css2?family=Roboto+Mono:ital,wght@0,300;0,400;1,200&display=swap"
       rel="stylesheet"
@@ -20,6 +21,7 @@
 
       <div class="toggle">
         <div class="toggle-button" id="toggle-button">☰</div>
+
         <div class="toggle-menu menu-hiden" id="toggle-menu">
           <h3><a href="index.html">Home</a></h3>
           <h3><a href="AboutMe.html">About</a></h3>
@@ -42,8 +44,8 @@
           <h4>Hi, I'm<br />Sergi Pruna</h4>
 
           <p id="textoInicio" style="font-size: 18px; font-family: sans-serif">
-            An enthusiastic and creative <b>junior FrontEnd developer</b> from
-            Mataró, Barcelona.
+            An enthusiastic and creative
+            <b>junior FrontEnd developer <br /></b> from Mataró, Barcelona.
           </p>
           <div class="button">
             <a href="https://es.linkedin.com/in/sergi-pruna-bb0115161"
@@ -55,8 +57,9 @@
           </div>
         </div>
       </div>
-
-      <img src="fotos/perfil.jpg" id="imagenPerfil" />
+      <div class="imagen">
+        <img src="fotos/perfil.jpg" id="imagenPerfil" />
+      </div>
     </div>
 
     <div class="encabezadoAbajo">
@@ -103,13 +106,14 @@
     </div>
 
     <script>
-      /*$(document).ready(function () {
-        $("#toggle-button").click(function () {
-          $("#toggle-menu").toggle();
-        });
-      });*/
       document.getElementById("toggle-button").onclick = function () {
         document.querySelector("#toggle-menu").classList.toggle("menu-hiden");
+
+        if (document.querySelector(".toggle-button").innerHTML === "☰") {
+          document.querySelector(".toggle-button").innerHTML = "✖";
+        } else {
+          document.querySelector(".toggle-button").innerHTML = "☰";
+        }
       };
     </script>
   </body>
