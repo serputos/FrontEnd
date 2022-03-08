@@ -170,10 +170,12 @@ h4 {
 }
 
 .formulario {
+  display: flex;
   font-family: Calibri;
   padding: 50px;
-  align-items: center;
+
   margin-top: 220px;
+  justify-content: center;
 }
 
 .formulario input[type="submit"] {
@@ -215,6 +217,14 @@ h4 {
 #textoAbout {
   line-height: 1.5em;
   text-align: justify;
+}
+#lname {
+  height: 20vh;
+}
+#lname,
+#fname,
+#correo {
+  width: 100vh;
 }
 
 /*ENCABEZADO ABAJO*/
