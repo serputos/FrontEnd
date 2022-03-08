@@ -192,6 +192,30 @@ h4 {
   align-items: center;
   margin-top: 200px;
 }
+#about {
+  color: #192075;
+}
+#projects {
+  font-family: "Roboto Mono";
+  color: #192075;
+}
+
+.bodyProjects {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+.bodyAbout {
+  display: flex;
+  max-width: 55vh;
+
+  margin-top: 10px;
+  flex-direction: column;
+}
+#textoAbout {
+  line-height: 1.5em;
+  text-align: justify;
+}
 
 /*ENCABEZADO ABAJO*/
 .encabezadoAbajo {
